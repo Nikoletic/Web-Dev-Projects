@@ -1,0 +1,19 @@
+.converter {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+}
+
+input, select {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+p {
+    margin-top: 10px;
+}

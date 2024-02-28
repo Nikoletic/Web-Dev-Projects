@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Дипломски рад</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/unitConv.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <main>
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+             
+              <div >
+                
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../index.html">Почетна страна</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./calculator.html">Калкулатор</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./aboutMomIn.html">Момент инерције</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./momIn.html">Прорачун момента инерције</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active"  aria-current="page" href="./unitConv.html">Претварач мерних јединица</a>
+                      </li>
+                  
+                  </ul>
+               
+              </div>
+            </div>
+          </nav>
+          <div class="container ">
+            <div class="card mainCard">
+               
+                <div class="card-body">
+                    <h2 class="card-title text-center">Претварач мерних јединица</h2>
+                    <div class="card-program">
+                      <div class="converter">
+                        <h5>Енергија</h5>
+                       <div class="row">
+                        <div class="col-3">
+                          <div class="form-floating mb-3 ">
+                            <input type="number" class="form-control" id="energyInput" placeholder="name@example.com">
+                            <label for="energyInput">Uнети енергију</label>
+                            
+                          </div>
+                        </div>
+                        <div class="col-2">
+                          <div class="form-floating">
+                            <select id="energyInputUnit" class="form-select">
+
+                              <option value="J">J</option>
+                              <option value="KJ">KJ</option>
+                              <option value="KW*h">KW*h</option>
+                              <option value="W*h">W*h</option>
+                              
+                          </select>
+                          <label for="energyInputUnit">Мерна јединица</label>
+                          </div>
+                     
+                        </div>
+                        <div class="col-2">
+                          <div class="form-floating">
+                            <select id="energyOutputUnit" class="form-select">
+
+                              <option value="J">J</option>
+                              <option value="KJ">KJ</option>
+                              <option value="KW*h">KW*h</option>
+                              <option value="W*h">W*h</option>
+                              
+                          </select>
+                          <label for="energyOutputUnit">Излазна јединица</label>
+                          </div>
+                        </div>
+                        <div class="col-2 text-center pt-2">
+                          <button class="btn btn-secondary " onclick="convertEnergy()">
+                            Конвертовати</button>
+                        </div>
+                        <div class="col-3">
+                          <div class="card" style="height: 50px;">
+                            <div class="card-body" style="padding-top: 5px; padding-bottom: 5px;">
+                              <h5 class="pt-2"id="energyResult"></h5>
+                            </div>
+                          </div>
+                          
+                        </div>
+                       </div>
+                       <h5>Момент инерције</h5>
+                       <div class="row">
+                        <div class="col-3">
+                          <div class="form-floating mb-3 ">
+                            <input type="number" class="form-control" id="momentInput" >
+                            <label for="momentInput">Унети момент инерције</label>
+                            
+                          </div>
+                        </div>
+                        <div class="col-2">
+                          <div class="form-floating">
+                            <select id="momentInputUnit" class="form-select">
+                              <option value="Kg*m&sup2;">Kg*m&sup2;</option>
+                              <option value="Kg*mm&sup2;">Kg*mm&sup2;</option>
+                              <option value="g*mm&sup2;">g*mm&sup2;</option>
+                              
+                          </select>
+                          <label for="momentInputUnit">Улазна јединица</label>
+                          </div>
+                     
+                        </div>
+                        <div class="col-2">
+                          <div class="form-floating">
+                            <select id="momentOutputUnit" class="form-select">
+
+                              <option value="Kg*m&sup2;">Kg*m&sup2;</option>
+                              <option value="Kg*mm&sup2;">Kg*mm&sup2;</option>
+                              <option value="g*mm&sup2;">g*mm&sup2;</option>
+                              
+                          </select>
+                          <label for="momentOutputUnit">Излазна јединица</label>
+                          </div>
+                        </div>
+                        <div class="col-2 text-center pt-2">
+                          <button class="btn btn-secondary " onclick="convertMoment()">
+                            Конвертовати</button>
+                        </div>
+                        <div class="col-3">
+                          <div class="card" style="height: 50px;">
+                            <div class="card-body" style="padding-top: 5px; padding-bottom: 5px;">
+                              <h5 class="pt-2"id="momentResult"></h5>                          
+                              </div>
+                          </div>
+                          
+                        </div>
+                       </div>
+                       <h5>Специфични топлотни капацитет</h5>
+                       <div class="row">
+                        <div class="col-3">
+                          <div class="form-floating mb-3 ">
+                            <input type="number" class="form-control" id="heatInput" >
+                            <label for="heatInput">Унети  специфични топлотни капацитет</label>
+                            
+                          </div>
+                        </div>
+                        <div class="col-2">
+                          <div class="form-floating">
+                            <select id="heatInputUnit" class="form-select">
+                              <option value="J/(Kg*K)">J/(Kg*K)</option>
+                            <option value="KJ/(Kg*K)">KJ/(Kg*K)</option>
+                            <option value="J/(g*K)">J/(g*K)</option>
+                              
+                          </select>
+                          <label for="heatInputUnit">Улазна јединица</label>
+                          </div>
+                     
+                        </div>
+                        <div class="col-2">
+                          <div class="form-floating">
+                            <select id="heatOutputUnit" class="form-select">
+
+                              <option value="J/(Kg*K)">J/(Kg*K)</option>
+                              <option value="KJ/(Kg*K)">KJ/(Kg*K)</option>
+                              <option value="J/(g*K)">J/(g*K)</option>
+                              
+                          </select>
+                          <label for="heatOutputUnit">Излазна јединица</label>
+                          </div>
+                        </div>
+                        <div class="col-2 text-center pt-2">
+                          <button class="btn btn-secondary " onclick="convertHeat()">
+                            Конвертовати</button>
+                        </div>
+                        <div class="col-3">
+                          <div class="card" style="height: 50px;">
+                            <div class="card-body" style="padding-top: 5px; padding-bottom: 5px;">
+                              <h5 class="pt-2"id="heatResult"></h5>                           
+                             </div>
+                          </div>
+                          
+                        </div>
+                       </div>
+                       </div>
+                    
+                       </div>
+                        
+                        
+                        
+                
+                       
+                
+                     
+                       
+                    </div>
+                
+                 
+                    
+                    </div>
+                </div>
+              </div>
+          </div>
+       
+
+    </main>
+   
+    <script src="../js/index.js"></script>
+    <script src="../js/unitConv.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</html>

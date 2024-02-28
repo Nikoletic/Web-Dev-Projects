@@ -1,0 +1,19 @@
+html, body ,main{
+    margin: 0;
+    height: 100%;
+}
+.container{
+    height: 100%;
+}
+.mainCard{
+    margin-top: 5% !important;
+    height: 80% !important;
+}
+.corner-image {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 150px; /* adjust the width and height as per your requirement */
+    height: auto;
+    z-index: 1; /* Ensure the corner image is above the card content */
+  }
